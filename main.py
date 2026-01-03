@@ -18,7 +18,7 @@ nb = ttk.Notebook(root)
 select = ttk.Frame(nb)
 nb.add(select, text='select')
 set = ttk.Frame(nb)
-nb.add(set, text='set limits', padding=15, state="disabled") # normal / disabled / hidden
+nb.add(set, text='set dimensions', padding=15, state="disabled") # normal / disabled / hidden
 edit = ttk.Frame(nb)
 nb.add(edit, text='edit', state="disabled")
 export = ttk.Frame(nb)
@@ -76,7 +76,7 @@ def set_validateLength(new_value):
         yay = False
     if not yay:
         root.bell()
-        messagebox.showwarning("invalid value", "column/row number must be an integer and can't be more than 1024")
+        messagebox.showwarning("invalid value", "column/row number must be an integer and can't be more than 256")
     return yay
 set_vcmd = (root.register(set_validateLength), '%P')
 
